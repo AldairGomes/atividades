@@ -1,0 +1,181 @@
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #252525;
+    font-family: Arial;
+    line-height: 1.7;
+}
+
+/* NOME DO PORTAL */
+
+body > h1 {
+    background-color: #751003;
+    color: rgba(252, 250, 250, 0.692);
+    text-align: center;
+    font-size: 44px;
+    padding: 25px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.paragrafo-inicial{
+    background-color: #751003;
+    color: rgba(252, 250, 250, 0.692);
+    text-align: center;
+    font-size: 14px;
+    margin: 0px;
+    padding: 10px;
+    letter-spacing: 1px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+
+
+/* CATEGORIA POLÍTICA BRASILEIRA */
+
+body > h2:first-of-type {
+    max-width: 850px;
+    margin: 40px auto 20px;
+    padding: 0 20px 12px;
+    font-size: 17px;
+    color: #751003;
+    border-bottom: 3px solid #751003;
+    text-transform: uppercase;
+}
+
+/* TÍTULO PRINCIPAL DA NOTÍCIA */
+
+body > h2:nth-of-type(2) {
+    max-width: 850px;
+    margin: 25px auto 15px;
+    padding: 0 20px;
+    font-size: 38px;
+    line-height: 1.2;
+    color: #161616;
+    font-weight: 800;
+}
+
+/* SUBTÍTULO */
+
+h3 {
+    max-width: 850px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+    font-size: 21px;
+    line-height: 1.5;
+    color: #626262;
+    font-weight: normal;
+}
+
+/* PARÁGRAFOS DA NOTÍCIA */
+
+body > p {
+    max-width: 850px;
+    margin: 20px auto;
+    padding: 0 20px;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+/* IMAGEM DA NOTÍCIA */
+
+figure {
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* LEGENDA DA IMAGEM */
+
+figcaption {
+    font-size: 13px;
+    color: #777777;
+    text-align: left;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+/* LISTA DE NOTÍCIAS RELACIONADAS */
+
+ol {
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 0 20px 0 50px;
+}
+
+li {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+/* TEXTO EM DESTAQUE */
+
+strong {
+    color: #252525;
+    font-weight: bold;
+}
+
+/* LINKS */
+
+a {
+    color: #0863ad;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #003c73;
+    text-decoration: underline;
+}
+
+/* PARÁGRAFOS DENTRO DA LISTA */
+
+ol p {
+    font-size: 19px;
+    line-height: 1.8;
+    margin: 25px 0;
+    color: #333333;
+}
+
+/* ADAPTAÇÃO PARA CELULARES */
+
+@media (max-width: 600px) {
+
+    body > h1 {
+        font-size: 32px;
+    }
+
+    body > h2:nth-of-type(2) {
+        font-size: 29px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    body > p,
+    ol p {
+        font-size: 17px;
+    }
+
+    li {
+        font-size: 16px;
+    }
+}
