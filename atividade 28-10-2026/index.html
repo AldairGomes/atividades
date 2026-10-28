@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- HTML5: configuração de idioma, caracteres e tela responsiva -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AbsoluteGames: vitrine de jogos e experiências digitais.">
+  <title>AbsoluteGames | Sua próxima aventura começa aqui</title>
+  <!-- Coloque a sua imagem logo-alugagames.png dentro da pasta imagens -->
+  <link rel="icon" href="imagens/logo.png">
+  <link rel="stylesheet" href="style.css">
+  <!-- defer faz o JavaScript carregar depois que o HTML for interpretado -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Barra superior com benefícios da loja -->
+  <div class="barra-aviso">🎮 Novidades toda semana <span>•</span> Ofertas especiais <span>•</span> Atendimento digital</div>
+
+  <!-- HEADER: logotipo à esquerda, campo de busca ao centro e ações à direita -->
+  <header class="cabecalho">
+    <a class="marca" href="#inicio" aria-label="AbsoluteGames, voltar ao início">
+      <!-- A imagem é opcional: o título continua visível se não houver PNG -->
+      <img src="imagens/logo.png" alt="Ícone do alugaGames" onerror="this.style.display='none'">
+      <strong>Absolute<span>Games</span></strong>
+    </a>
+    <!-- barra de pesquisa-->
+    <form class="pesquisa" id="formPesquisa" role="search">
+      <label class="sr-only" for="busca">Buscar jogos</label>
+      <input id="busca" type="search" placeholder="Qual jogo você procura?" autocomplete="off">
+      <button type="submit" aria-label="Pesquisar">⌕</button>
+    </form>
+    <div class="acoes">
+      <!-- Ainda são botões de demonstração, sem autenticação real -->
+      <button type="button" class="link-acao" id="botaoConta">♙ <span>Minha conta</span></button>
+      <button type="button" class="botao-carrinho" id="abrirCarrinho">🛒 Carrinho <span id="contadorCarrinho">0</span></button>
+    </div>
+  </header>
+
+  <!-- NAV: os botões usam data-categoria para filtrar o catálogo -->
+  <nav class="navegacao" aria-label="Categorias principais">
+    <div class="container nav-conteudo">
+      <button class="categoria ativa" data-categoria="Todos">Todos</button>
+      <button class="categoria" data-categoria="PC">PC</button>
+      <button class="categoria" data-categoria="PlayStation">PlayStation</button>
+      <button class="categoria" data-categoria="Xbox">Xbox</button>
+      <button class="categoria" data-categoria="Nintendo">Nintendo</button>
+      <button class="categoria" data-categoria="Assinaturas">Assinaturas</button>
+    </div>
+  </nav>
+
+  <main id="inicio">
+    <!-- HERO: banner principal da loja. Troque os textos e imagens quando quiser. -->
+    <section class="hero container" aria-labelledby="tituloHero">
+      <div class="hero-texto">
+        <span class="etiqueta">NOVA EXPERIÊNCIA</span>
+        <h1 id="tituloHero">Seu próximo jogo <em>começa aqui.</em></h1>
+        <p>Explore títulos para diferentes plataformas em uma vitrine gamer feita para você.</p>
+        <a class="botao-primario" href="#catalogo">Explorar catálogo ↗</a>
+      </div>
+      <div class="hero-destaque" aria-hidden="true">
+        <img
+          src="imagens/logo.png"
+          alt=""
+          class="logo-hero"
+          >
+      <span>JOGUE MAIS</span>
+      </div>
+    </section>
+
+    <!-- BENEFÍCIOS: pequenos diferenciais abaixo do banner -->
+    <section class="beneficios container" aria-label="Destaques da plataforma">
+      <div>⚡ <span><strong>Navegação rápida</strong><small>Encontre o que procura</small></span></div>
+      <div>🎯 <span><strong>Várias plataformas</strong><small>PC e consoles</small></span></div>
+      <div>💬 <span><strong>Fale com a equipe</strong><small>Suporte e informações</small></span></div>
+    </section>
+
+    <!-- CARDS DE CATEGORIAS: os links também filtram os produtos -->
+    <section class="container secao" aria-labelledby="tituloPlataformas">
+      <div class="secao-titulo"><div><span class="sobretitulo">ESCOLHA SUA PLATAFORMA</span><h2 id="tituloPlataformas">Onde você joga?</h2></div></div>
+      <div class="plataformas">
+        <button data-atalho="PC">🖥️ <strong>PC</strong><small>Ver jogos →</small></button>
+        <button data-atalho="PlayStation">🎮 <strong>PlayStation</strong><small>Ver jogos →</small></button>
+        <button data-atalho="Xbox">🟢 <strong>Xbox</strong><small>Ver jogos →</small></button>
+        <button data-atalho="Nintendo">🔴 <strong>Nintendo</strong><small>Ver jogos →</small></button>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO: produtos são criados dinamicamente no script.js -->
+    <section class="container secao" id="catalogo" aria-labelledby="tituloCatalogo">
+      <div class="secao-titulo"><div><span class="sobretitulo">ESCOLHAS PARA VOCÊ</span><h2 id="tituloCatalogo">Jogos em destaque</h2></div><span class="contador-produtos" id="resultadoBusca"></span></div>
+      <div class="filtros">
+        <label for="filtroPlataforma">Plataforma</label>
+        <select id="filtroPlataforma"><option value="Todos">Todas</option><option>PC</option><option>PlayStation</option><option>Xbox</option><option>Nintendo</option><option>Assinaturas</option></select>
+        <label for="ordenacao">Ordenar</label>
+        <select id="ordenacao"><option value="padrao">Destaques</option><option value="menor">Menor preço</option><option value="maior">Maior preço</option><option value="nome">Nome (A–Z)</option></select>
+      </div>
+      <div id="gradeProdutos" class="grade-produtos" aria-live="polite"></div>
+      <p id="semResultados" class="sem-resultados" hidden>Nenhum item encontrado. Experimente outra pesquisa.</p>
+    </section>
+
+    <!-- FAIXA PROMOCIONAL: espaço para comunicar ofertas e campanhas -->
+    <section class="container faixa-promo"><div><span class="sobretitulo">ALUGAGAMES</span><h2>Uma nova forma de descobrir jogos.</h2><p>Prepare sua lista de favoritos e encontre sua próxima diversão.</p></div><a class="botao-primario" href="#catalogo">Ver ofertas →</a></section>
+
+    <!-- FAQ: details/summary abre e fecha sem precisar de JavaScript -->
+    <section class="container secao faq" id="duvidas"><div class="secao-titulo"><div><span class="sobretitulo">PRECISA DE AJUDA?</span><h2>Perguntas frequentes</h2></div></div>
+      <details><summary>Os produtos desta página já estão disponíveis para compra?</summary><p>Não. Esta é uma demonstração visual e funcional do catálogo. Os itens, valores e o carrinho são fictícios.</p></details>
+      <details><summary>O carrinho conclui pagamentos?</summary><p>Não. Ele simula a seleção de produtos no navegador; não há integração com meios de pagamento.</p></details>
+      <details><summary>Como adicionar produtos reais?</summary><p>Edite a lista de produtos dentro do arquivo script.js. Para comercializar produtos de verdade, será necessário adicionar servidor, banco de dados, estoque e pagamento seguro.</p></details>
+    </section>
+  </main>
+
+  <!-- FOOTER: rodapé com informações e navegação -->
+  <footer class="rodape" id="contato"><div class="container colunas-rodape"><div><h2>aluga<span>Games</span></h2><p>Seu espaço gamer, do seu jeito.</p></div><div><h3>Explore</h3><a href="#catalogo">Catálogo</a><a href="#inicio">Início</a></div><div><h3>Suporte</h3><a href="#duvidas">Perguntas frequentes</a><a href="mailto:contato@exemplo.com">E-mail de exemplo</a></div></div><div class="container rodape-final">© <span id="ano"></span> alugaGames. Projeto demonstrativo.</div></footer>
+
+  <!-- DRAWER: painel lateral do carrinho. O JS controla abertura e conteúdo -->
+  <div class="fundo-modal" id="fundoModal" hidden></div>
+  <aside class="carrinho-painel" id="painelCarrinho" aria-label="Meu carrinho" aria-hidden="true">
+    <div class="painel-topo"><h2>Meu carrinho</h2><button id="fecharCarrinho" aria-label="Fechar carrinho">✕</button></div>
+    <div class="itens-carrinho" id="itensCarrinho"></div>
+    <div class="painel-rodape"><div class="total"><strong>Total demonstrativo</strong><strong id="totalCarrinho">R$ 0,00</strong></div><button class="botao-primario" id="finalizarCompra" type="button">Continuar</button><small>Simulação: nenhum pagamento será realizado.</small></div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

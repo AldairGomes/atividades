@@ -1,0 +1,1080 @@
+
+/* ==========================================================
+   AbsoluteGames — ARQUIVO PRINCIPAL DE ESTILOS
+   ==========================================================
+
+   ÍNDICE:
+
+   01. Variáveis e configurações gerais
+   02. Cabeçalho
+   03. Menu de categorias
+   04. Banner principal (Hero)
+   05. Benefícios e plataformas
+   06. Catálogo de produtos
+   07. Promoções, FAQ e rodapé
+   08. Carrinho lateral e notificações
+   09. Responsividade
+
+   ========================================================== */
+
+
+/* ==========================================================
+   01. VARIÁVEIS E CONFIGURAÇÕES GERAIS
+   ========================================================== */
+
+/* :root guarda valores reutilizáveis em todo o CSS. */
+
+:root {
+    /* Cores principais */
+    --vermelho: #e50914;
+    --vermelho-claro: #ff343f;
+    --preto: #101014;
+
+    /* Cores dos componentes */
+    --painel: #1b1b22;
+    --painel2: #262630;
+    --branco: #e8e8ed;
+    --muted: #a5a5af;
+    --borda: #33333b;
+
+    /* Largura máxima do conteúdo */
+    --largura: 1200px;
+}
+
+/* Aplica box-sizing a todos os elementos. */
+
+* {
+    box-sizing: border-box;
+}
+
+/* Suaviza a rolagem ao clicar em âncoras. */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Configura a aparência geral da página. */
+
+body {
+    margin: 0;
+    background: var(--preto);
+    color: var(--branco);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+/* Faz os formulários herdarem a fonte do site. */
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Remove o sublinhado padrão dos links. */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Evita imagens maiores que seus containers. */
+
+img {
+    max-width: 100%;
+}
+
+/* Centraliza o conteúdo e limita sua largura. */
+
+.container {
+    max-width: var(--largura);
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Esconde visualmente textos destinados a leitores de tela. */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+
+/* ==========================================================
+   02. CABEÇALHO
+   ========================================================== */
+
+/* Barra informativa acima do cabeçalho. */
+
+.barra-aviso {
+    background: #070709;
+    text-align: center;
+    padding: 8px;
+    color: #fa0000;
+    font-size: 12px;
+}
+
+.barra-aviso span {
+    color: var(--vermelho);
+    margin: 0 16px;
+}
+
+/* Organiza logo, pesquisa e ações horizontalmente. */
+
+.cabecalho {
+    max-width: 1240px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+}
+
+/* Agrupa a imagem da logo e o nome alugaGames. */
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    font-size: 25px;
+}
+
+.marca img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+}
+
+/* Aplica vermelho aos elementos destacados da marca. */
+
+.marca span,
+.rodape h2 span {
+    color: var(--vermelho);
+}
+
+/* Campo de pesquisa. */
+
+.pesquisa {
+    display: flex;
+    flex: 1;
+    background: var(--painel);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    overflow: hidden;
+    color: red
+}
+
+input::placeholder {
+  color: #fd0404;
+  font-style: arial;
+}
+
+
+.pesquisa input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: 0;
+    color: white;
+    padding: 15px;
+    outline: none;
+}
+
+/* Destaca a pesquisa quando o usuário está digitando. */
+
+.pesquisa:focus-within {
+    border-color: var(--vermelho);
+}
+
+.pesquisa button {
+    border: 0;
+    background: var(--vermelho);
+    color: white;
+    width: 52px;
+    font-size: 27px;
+}
+
+/* Botões de conta e carrinho. */
+
+.acoes {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.link-acao,
+.botao-carrinho {
+    border: 1px solid var(--borda);
+    color: var(--branco);
+    background: var(--painel);
+    border-radius: 9px;
+    padding: 13px;
+    white-space: nowrap;
+}
+
+/* Contador de produtos adicionados ao carrinho. */
+
+.botao-carrinho span {
+    margin-left: 7px;
+    background: var(--vermelho);
+    padding: 3px 7px;
+    border-radius: 20px;
+}
+
+
+/* ==========================================================
+   03. MENU DE CATEGORIAS
+   ========================================================== */
+
+.navegacao {
+    background: #19191f;
+    border-top: 1px solid var(--borda);
+    border-bottom: 1px solid var(--borda);
+}
+
+/* Exibe as categorias horizontalmente. */
+
+.nav-conteudo {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+}
+
+/* Aparência dos botões de categoria. */
+
+.categoria {
+    background: none;
+    border: none;
+    color: var(--branco);
+    padding: 16px 18px;
+    white-space: nowrap;
+}
+
+/* Indica a categoria ativa com uma linha vermelha. */
+
+.categoria:hover,
+.categoria.ativa {
+    color: white;
+    box-shadow: inset 0 -3px 0 var(--vermelho);
+}
+
+
+/* ==========================================================
+   04. BANNER PRINCIPAL (HERO)
+   ========================================================== */
+
+/* Banner de destaque da página inicial. */
+
+.hero {
+    margin-top: 26px;
+    margin-bottom: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    min-height: 340px;
+
+    background:
+        radial-gradient(
+            circle at 85% 40%,
+            #78202a,
+            transparent 36%
+        ),
+        linear-gradient(
+            125deg,
+            #2a1217,
+            #141418 62%
+        );
+
+    border: 1px solid #4c2228;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+/* Área de texto do banner. */
+
+.hero-texto {
+    padding: 44px 38px;
+    max-width: 640px;
+}
+
+/* Textos pequenos acima dos títulos. */
+
+.etiqueta,
+.sobretitulo {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #ff5d65;
+}
+
+/* Título principal do banner. */
+
+.hero h1 {
+    font-size: clamp(34px, 4vw, 58px);
+    line-height: 1.07;
+    margin: 18px 0;
+}
+
+/* Destaca parte do título em vermelho. */
+
+.hero h1 em {
+    color: var(--vermelho-claro);
+    font-style: normal;
+}
+
+.hero p {
+    color: #d4cbd0;
+    margin-bottom: 26px;
+}
+
+/* Botão principal utilizado em várias partes do site. */
+
+.botao-primario {
+    display: inline-block;
+    background: var(--vermelho);
+    color: white;
+    padding: 13px 22px;
+    border: 0;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.botao-primario:hover {
+    background: #b90810;
+}
+
+/* Elemento ilustrativo do lado direito do banner. */
+
+.hero-destaque {
+    display: flex;
+    min-width: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 50px;
+    transform: rotate(-10deg);
+}
+
+.logo-hero {
+    display: block;
+
+    width: 300px;
+    height: auto;
+
+    max-width: 100%;
+    object-fit: contain;
+
+    filter: drop-shadow(0 0 15px #e50914);
+}
+
+.hero-destaque span {
+    color: white;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 5px;
+}
+
+
+/* ==========================================================
+   05. BENEFÍCIOS E PLATAFORMAS
+   ========================================================== */
+
+/* Apresenta três benefícios lado a lado. */
+
+.beneficios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.beneficios > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: var(--painel);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 25px;
+}
+
+.beneficios strong,
+.beneficios small {
+    display: block;
+    font-size: 14px;
+}
+
+.beneficios small {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Espaçamento padrão entre as seções. */
+
+.secao {
+    padding-top: 56px;
+}
+
+/* Organiza título e informações secundárias da seção. */
+
+.secao-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.secao h2,
+.faixa-promo h2 {
+    font-size: 30px;
+    margin: 5px 0;
+}
+
+/* Grade com quatro plataformas por linha. */
+
+.plataformas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+/* Botões das plataformas. */
+
+.plataformas button {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+
+    background: linear-gradient(
+        140deg,
+        #2b2b33,
+        #19191e
+    );
+
+    color: white;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 24px;
+
+    font-size: 26px;
+    text-align: left;
+}
+
+/* Efeito ao passar o mouse. */
+
+.plataformas button:hover {
+    border-color: var(--vermelho);
+    transform: translateY(-2px);
+}
+
+.plataformas strong {
+    font-size: 18px;
+}
+
+.plataformas small {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+
+/* ==========================================================
+   06. CATÁLOGO DE PRODUTOS
+   ========================================================== */
+
+/* Quantidade de produtos encontrados. */
+
+.contador-produtos {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* Área dos filtros do catálogo. */
+
+.filtros {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.filtros label {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.filtros select {
+    background: var(--painel);
+    color: white;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Grade principal: quatro produtos por linha. */
+
+.grade-produtos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+/* Estrutura visual de cada produto. */
+
+.card-produto {
+    background: var(--painel);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 0.2s,
+        border-color 0.2s;
+}
+
+/* Eleva o card quando o mouse passa por cima. */
+
+.card-produto:hover {
+    transform: translateY(-4px);
+    border-color: #a72530;
+}
+
+/* Área da imagem ou ícone do produto. */
+
+/*
+   --capa é uma variável definida individualmente
+   para cada produto, geralmente pelo JavaScript.
+*/
+
+.capa-produto {
+    height: 165px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 80px;
+
+    background: linear-gradient(
+        135deg,
+        var(--capa),
+        #111115
+    );
+
+    position: relative;
+}
+
+/* Selo promocional sobre a capa. */
+
+.selo {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+
+    background: var(--vermelho);
+    color: white;
+
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px 9px;
+}
+
+/* Informações abaixo da imagem do produto. */
+
+.card-conteudo {
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    flex: 1;
+}
+
+.card-conteudo h3 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.meta-produto {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* Valor do produto. */
+
+.preco {
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.preco small {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: normal;
+}
+
+/* Botão para adicionar ao carrinho. */
+
+.adicionar {
+    margin-top: auto;
+    background: #35353f;
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.adicionar:hover {
+    background: var(--vermelho);
+}
+
+/* Mensagem apresentada quando a busca não encontra itens. */
+
+.sem-resultados {
+    padding: 25px;
+    text-align: center;
+    color: var(--muted);
+}
+
+
+/* ==========================================================
+   07. PROMOÇÕES, FAQ E RODAPÉ
+   ========================================================== */
+
+/* Faixa promocional antes do rodapé. */
+
+.faixa-promo {
+    margin-top: 60px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    background: linear-gradient(
+        100deg,
+        #491219,
+        #24242a
+    );
+
+    border-radius: 16px;
+}
+
+.faixa-promo p {
+    color: #d9cfd2;
+}
+
+/* FAQ: seção de perguntas frequentes. */
+
+.faq {
+    padding-bottom: 60px;
+}
+
+/* Cada details representa uma pergunta expansível. */
+
+.faq details {
+    padding: 18px;
+    border-bottom: 1px solid var(--borda);
+    background: var(--painel);
+}
+
+.faq details:first-of-type {
+    border-radius: 10px 10px 0 0;
+}
+
+.faq details:last-child {
+    border-radius: 0 0 10px 10px;
+}
+
+/* Summary é o título clicável da pergunta. */
+
+.faq summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.faq p {
+    color: var(--muted);
+}
+
+/* Rodapé principal. */
+
+.rodape {
+    background: #09090c;
+    border-top: 1px solid var(--borda);
+    padding-top: 42px;
+}
+
+.colunas-rodape {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 35px;
+}
+
+.rodape h2 {
+    margin: 0;
+}
+
+.rodape h3 {
+    font-size: 15px;
+}
+
+.rodape a {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+    margin: 12px 0;
+}
+
+.rodape p,
+.rodape-final {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* Linha final de direitos autorais. */
+
+.rodape-final {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-top: 25px;
+    border-top: 1px solid var(--borda);
+}
+
+
+/* ==========================================================
+   08. CARRINHO LATERAL E NOTIFICAÇÕES
+   ========================================================== */
+
+/* Escurece a página quando o carrinho está aberto. */
+
+.fundo-modal {
+    position: fixed;
+    inset: 0;
+    background: #000a;
+    z-index: 30;
+}
+
+/* Mantém o fundo invisível quando estiver oculto. */
+
+.fundo-modal[hidden] {
+    display: none;
+}
+
+/* Painel que desliza da direita para a esquerda. */
+
+.carrinho-painel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    width: min(420px, 100%);
+    background: #1a1a20;
+    z-index: 31;
+
+    transform: translateX(105%);
+    transition: transform 0.25s;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: -10px 0 40px #0007;
+}
+
+/* A classe aberto é adicionada pelo JavaScript. */
+
+.carrinho-painel.aberto {
+    transform: translateX(0);
+}
+
+/* Cabeçalho e rodapé internos do carrinho. */
+
+.painel-topo,
+.painel-rodape {
+    padding: 20px;
+    border-bottom: 1px solid var(--borda);
+}
+
+.painel-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.painel-topo h2 {
+    margin: 0;
+}
+
+.painel-topo button {
+    background: none;
+    border: 0;
+    color: white;
+    font-size: 20px;
+}
+
+/* Área rolável com os produtos selecionados. */
+
+.itens-carrinho {
+    flex: 1;
+    overflow: auto;
+    padding: 18px;
+}
+
+/* Cada linha representa um item do carrinho. */
+
+.linha-carrinho {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--borda);
+}
+
+.linha-carrinho div {
+    flex: 1;
+}
+
+.linha-carrinho small {
+    display: block;
+    color: var(--muted);
+}
+
+/* Botão para remover produtos. */
+
+.linha-carrinho button {
+    background: none;
+    color: #ff7078;
+    border: 0;
+}
+
+/* Total calculado pelo JavaScript. */
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+/* Botão principal do carrinho ocupa toda a largura. */
+
+.painel-rodape .botao-primario {
+    width: 100%;
+}
+
+.painel-rodape small {
+    display: block;
+    text-align: center;
+    color: var(--muted);
+    margin-top: 10px;
+}
+
+/* Notificação temporária (Toast). */
+
+.toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: #292932;
+    border: 1px solid #ff434d;
+    color: white;
+
+    padding: 12px 18px;
+    border-radius: 9px;
+
+    z-index: 40;
+    display: none;
+
+    max-width: 90%;
+    text-align: center;
+}
+
+/* Classe utilizada para exibir a notificação. */
+
+.toast.visivel {
+    display: block;
+}
+
+
+/* ==========================================================
+   09. RESPONSIVIDADE
+   ==========================================================
+
+   Media queries permitem adaptar o layout para
+   telas menores, como tablets e celulares.
+
+   ========================================================== */
+
+
+/* ----------------------------------------------------------
+   TABLETS E TELAS MENORES QUE 950px
+   ---------------------------------------------------------- */
+
+@media (max-width: 950px) {
+
+    /* Permite quebrar o cabeçalho em outras linhas. */
+
+    .cabecalho {
+        flex-wrap: wrap;
+    }
+
+    /* Move a pesquisa para uma linha inteira. */
+
+    .pesquisa {
+        order: 3;
+        flex-basis: 100%;
+    }
+
+    /* Mostra três produtos por linha. */
+
+    .grade-produtos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero-destaque {
+        margin-right: 15px;
+        min-width: 140px;
+    }
+
+    .icone-controle {
+        font-size: 80px;
+    }
+}
+
+
+/* ----------------------------------------------------------
+   CELULARES E TELAS MENORES QUE 700px
+   ---------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    /* Reduz o cabeçalho. */
+
+    .cabecalho {
+        gap: 12px;
+        padding: 14px;
+    }
+
+    .marca {
+        font-size: 21px;
+    }
+
+    .marca img {
+        width: 45px;
+        height: 45px;
+    }
+
+    /* Esconde textos de ações para economizar espaço. */
+
+    .link-acao span {
+        display: none;
+    }
+
+    .botao-carrinho {
+        font-size: 13px;
+    }
+
+    /* Adapta o banner. */
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-texto {
+        padding: 30px 22px;
+    }
+
+    .hero-destaque {
+        display: none;
+    }
+
+    /* Benefícios passam a ocupar uma coluna. */
+
+    .beneficios {
+        grid-template-columns: 1fr;
+    }
+
+    /* Plataformas e produtos ficam em duas colunas. */
+
+    .plataformas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grade-produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .secao h2 {
+        font-size: 24px;
+    }
+
+    /* Promoção passa a ser vertical. */
+
+    .faixa-promo {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    /* Rodapé em duas colunas. */
+
+    .colunas-rodape {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Primeira coluna ocupa toda a largura. */
+
+    .colunas-rodape > div:first-child {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* ----------------------------------------------------------
+   CELULARES PEQUENOS: ATÉ 390px
+   ---------------------------------------------------------- */
+
+@media (max-width: 390px) {
+
+    /* Mostra apenas um produto por linha. */
+
+    .grade-produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .acoes {
+        gap: 4px;
+    }
+
+    .link-acao,
+    .botao-carrinho {
+        padding: 10px;
+    }
+
+    .marca {
+        font-size: 18px;
+    }
+}
