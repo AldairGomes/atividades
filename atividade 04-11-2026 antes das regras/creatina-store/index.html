@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#121214">
+  <meta name="description" content="Loja multimarcas de creatinas: compare marcas, pesos e versões e monte seu pedido pelo WhatsApp.">
+  <title>CREA+ | Loja multimarcas de creatina</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="topbar">FRETE A CONSULTAR <span>•</span> COMPRA PELO WHATSAPP <span>•</span> CATÁLOGO DEMONSTRATIVO</div>
+  <header class="site-header" id="inicio">
+    <div class="container header-inner">
+      <a href="#inicio" class="brand" aria-label="CREA+ - voltar ao início"><span class="brand-icon">C<span>+</span></span><span>CREA<span class="plus">+</span><small>SUPLEMENTOS</small></span></a>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+      <nav class="main-nav" id="main-nav" aria-label="Menu principal">
+        <a href="#inicio">Início</a><a href="#produtos">Creatinas</a><a href="#beneficios">Diferenciais</a><a href="#sobre">Sobre nós</a><a href="#contato">Contato</a>
+      </nav>
+      <button class="cart-trigger" id="cart-trigger" type="button" aria-label="Abrir carrinho">🛒 <span id="cart-count">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <span class="eyebrow"><i></i> VÁRIAS MARCAS. UMA SÓ LOJA.</span>
+          <h1>AS MELHORES ESCOLHAS <em>COMEÇAM AQUI.</em></h1>
+          <p>Compare marcas de creatina em um só lugar. Escolha o peso, veja as opções demonstrativas e monte seu pedido com facilidade.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="#produtos">VER CREATINAS <span>↗</span></a><a class="btn btn-outline" href="#sobre">CONHEÇA A LOJA</a></div>
+          <div class="hero-points"><span>✓ Diversas marcas</span><span>✓ Vários tamanhos</span><span>✓ Pedido simplificado</span></div>
+        </div>
+        <div class="hero-art" aria-label="Embalagens genéricas ilustrativas de creatina">
+          <div class="hero-ring ring-one"></div><div class="hero-ring ring-two"></div>
+          <img class="jar hero-jar hero-jar-back" src="assets/creatina-vermelha.svg" alt="Embalagem ilustrativa de creatina vermelha">
+          <img class="jar hero-jar hero-jar-front" src="assets/creatina-preta.svg" alt="Embalagem ilustrativa de creatina preta">
+          <span class="hero-stamp">FOCO<br><b>NO SEU</b><br>RITMO ↗</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-strip" id="beneficios" aria-label="Diferenciais da loja"><div class="container benefits-grid"><div><b>01</b><span><strong>COMPARE MARCAS</strong><small>Explore diferentes fabricantes e linhas</small></span></div><div><b>02</b><span><strong>ESCOLHA TAMANHOS</strong><small>150 g, 250 g, 300 g, 500 g e 1 kg</small></span></div><div><b>03</b><span><strong>ATENDIMENTO DIRETO</strong><small>Finalize sua lista pelo WhatsApp</small></span></div></div></section>
+
+    <section class="catalog section" id="produtos"><div class="container">
+      <div class="section-heading"><div><span class="eyebrow dark">ESCOLHA A SUA</span><h2>CATÁLOGO DE <em>CREATINAS</em></h2><p>Filtre por marca, tipo e peso. Os produtos abaixo são exemplos para montar a vitrine.</p></div><span class="catalog-note">PRODUTOS E PREÇOS DE EXEMPLO</span></div>
+      <div class="filters" aria-label="Filtrar produtos"><div class="filter-buttons" id="type-filters"><button class="filter active" data-type="todos">Todos</button><button class="filter" data-type="monohidratada">Monohidratada</button><button class="filter" data-type="micronizada">Micronizada</button></div><div class="filters-right"><label for="brand-filter">Marca</label><select id="brand-filter"><option value="todos">Todas as marcas</option><option value="Growth">Growth</option><option value="Integralmedica">Integralmédica</option><option value="Max Titanium">Max Titanium</option><option value="Dark Lab">Dark Lab</option><option value="Soldiers Nutrition">Soldiers Nutrition</option></select><label for="size-filter">Tamanho</label><select id="size-filter"><option value="todos">Todos</option><option value="150">150 g</option><option value="250">250 g</option><option value="300">300 g</option><option value="500">500 g</option><option value="1000">1 kg</option></select><label for="sort-filter">Ordenar</label><select id="sort-filter"><option value="featured">Destaques</option><option value="price-asc">Menor preço</option><option value="price-desc">Maior preço</option><option value="weight">Menor tamanho</option></select></div></div>
+      <div class="products-grid" id="products-grid" aria-live="polite"></div><p class="empty-message" id="empty-message" hidden>Nenhum produto encontrado com esses filtros. Tente outra combinação.</p>
+    </div></section>
+
+    <section class="info-section" id="sobre"><div class="container info-layout"><div class="info-visual"><span class="info-overline">CREA+ / SUA LOJA</span><div class="big-letter">C<span>+</span></div><span class="info-bottom">SIMPLES. DIRETO. SEM COMPLICAÇÃO.</span></div><div class="info-copy"><span class="eyebrow">SOBRE NÓS</span><h2>VÁRIAS MARCAS. <em>UMA VITRINE SIMPLES.</em></h2><p>Na CREA+, a proposta é reunir creatinas de diferentes marcas, pesos e versões em uma única vitrine, com filtros práticos e contato direto para consultar disponibilidade e entrega.</p><p>Este é um modelo demonstrativo, sem vínculo comercial ou autorização declarada das marcas exibidas. Confirme produtos, rótulos, fotos, preços e estoque com seus fornecedores antes de publicar.</p><a href="#produtos" class="btn btn-primary">EXPLORAR PRODUTOS ↗</a></div></div></section>
+
+    <section class="contact-section" id="contato"><div class="container contact-layout"><div><span class="eyebrow dark">PRECISA DE AJUDA?</span><h2>FALE COM A <em>CREA+</em></h2><p>Tire dúvidas sobre tamanhos, versões, disponibilidade e condições de entrega.</p></div><a id="contact-whatsapp" class="btn btn-dark" href="#" target="_blank" rel="noopener noreferrer">CONVERSAR PELO WHATSAPP ↗</a></div></section>
+  </main>
+  <footer><div class="container footer-layout"><div><strong>CREA<span>+</span></strong><small>Loja demonstrativa multimarcas.</small></div><p>© <span id="year"></span> CREA+. Produtos, imagens e preços ilustrativos.</p><a href="#inicio">VOLTAR AO TOPO ↑</a></div></footer>
+
+  <div class="whatsapp-position"><a class="whatsapp-float" id="whatsapp-float" href="#" target="_blank" rel="noopener noreferrer" aria-label="Falar com a loja no WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 .8A15.1 15.1 0 0 0 2.9 23.4L.8 31l7.8-2A15.1 15.1 0 1 0 16 .8Zm0 27.5a12.3 12.3 0 0 1-6.3-1.7l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.4 12.4 0 1 1 16 28.3Zm6.8-9.2c-.4-.2-2.2-1.1-2.6-1.2-.3-.1-.6-.2-.8.2-.3.4-1 1.2-1.2 1.4-.2.2-.4.3-.8.1a10.1 10.1 0 0 1-3-1.8 11.3 11.3 0 0 1-2-2.5c-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.6.1-.2 0-.5 0-.7l-1.2-2.8c-.3-.7-.6-.6-.8-.6h-.8c-.3 0-.7.1-1 .5s-1.3 1.3-1.3 3.1 1.4 3.6 3.1 4.9 3.4 5.2c.4.2 2.4 2.5 5.8 3.5 1.4.4 2.5.4 3.4.3 1-.1 2.2-1 2.5-2 .3-1 .3-1.9.2-2.1-.1-.2-.3-.3-.7-.5Z"/></svg></a></div>
+
+  <div class="cart-backdrop" id="cart-backdrop" hidden></div><aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true"><div class="cart-header"><div><span class="eyebrow dark">SEU PEDIDO</span><h2 id="cart-title">Meu carrinho</h2></div><button id="cart-close" class="icon-btn" aria-label="Fechar carrinho">✕</button></div><div id="cart-items" class="cart-items"></div><div class="cart-footer"><p><span>Subtotal estimado</span><strong id="cart-total">R$ 0,00</strong></p><small>Frete e disponibilidade são confirmados pela loja.</small><button class="btn btn-primary checkout" id="checkout" type="button">PEDIR PELO WHATSAPP ↗</button><button class="clear-cart" id="clear-cart" type="button">Esvaziar carrinho</button></div></aside>
+</body>
+</html>

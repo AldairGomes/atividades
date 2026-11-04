@@ -1,0 +1,25 @@
+CREA+ — PROTÓTIPO MULTIMARCAS
+
+Abra index.html no navegador.
+Produtos e preços são EXEMPLOS, não ofertas reais.
+As imagens SVG são genéricas; não representam embalagens oficiais.
+Antes de publicar, confirme SKUs, peso, tipo, alegações de rotulagem, estoque, preços e fotos autorizadas.
+Troque WHATSAPP_NUMBER em script.js pelo número real (DDI + DDD).
+O carrinho monta uma mensagem para o WhatsApp; não há pagamento online ou gestão de estoque.
+
+IDENTIDADE VISUAL: preto #121214, vermelho #ed1c24, branco #f6f6f7.
+Layout, filtros, carrinho e WhatsApp mantidos.
+
+ETAPA A — CARTÕES BRANCOS
+Cartão e área da imagem em branco puro (#ffffff), bordas cinza discretas,
+textos pretos, etiquetas e botões vermelhos. O fundo de cores individuais
+anteriormente usado nas imagens do catálogo foi neutralizado no CSS.
+
+RESPONSIVIDADE E PADRONIZACAO (ETAPA ATUAL)
+- Cartoes com alturas iguais dentro da linha, usando CSS Grid.
+- Imagens em area 1:1, redimensionadas por object-fit: contain.
+- Espacos fixos para categoria (2 linhas), nome (3 linhas) e descricao (2 linhas).
+- Precos e botoes sempre na mesma posicao vertical dentro da linha.
+- Textos maiores que o espaco previsto sao cortados visualmente, preservando o nome completo no atributo title e no botao acessivel.
+- 4 colunas no desktop amplo, 3 no notebook, 2 no celular e 1 em telas muito estreitas.
+- Regra de manutencao: se criar novos campos no cartao, ajuste as linhas de .product-details, em vez de adicionar margens arbitrarias.
