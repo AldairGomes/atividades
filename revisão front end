@@ -1,0 +1,59 @@
+1 qual a diferença em margin e padding?
+R: a posição de espaçamento em relaçao a borda do elemento.Enquanto o padding cria um espaço interno (entre o conteúdo e a borda), a margin cria um espaço externo (entre a borda e os elementos vizinhos).
+
+2 para que serve uma class?
+R: para separar o site em objetos correspondentes, exemplo: todos os titulos ficam dentro da mesma classe e todos são alterados simutaneamente
+
+3 qual a diferença de class e id?
+R: class são varios itens a serem alterados id é um unico item
+
+4 o que faz o display flex?
+R: ativa o flexbox que serve para alinhar, distrubuir e organizar elementos dentro de um container
+
+5 em qual elemento normalmente usamos display flex, no pai ou no filho?
+R: usamos display:flex no pai para que os filhos recebam como herança a propriedades do pai
+
+6 para que serve gap? 
+R: serve para criar espaçamento entre os elementos filhos
+
+7 para que serve o flex wrap?
+R: para controlar se os elementos filhos podem ou não quebrar para linha de baixo do texto
+
+8 qual a diferença de relative e absolute?
+R: relative usa a sua propria referencia, exemplo: ele vai ficar onde for colocado e o absolute vai buscar um pai e se não tiver ele referencia a pagina toda
+
+9 qual propriedade centraliza os elementos no eixo principal?
+R: a propriedade que centraliza no flex box é o justify-content: center 
+
+10 para que serve o position fixed?
+R: retira o elemento do fluxo normal da pagina e o fixa em relação a janela do navegador
+
+11 diferença entre fixed e sticky?
+R: Enquanto o fixed fica congelado na janela do navegador o tempo todo, o sticky rola junto com a página como um elemento comum até atingir uma posição específica (como o topo da tela), onde ele "gruda" e passa a se comportar como fixo dentro do seu contêiner pai.
+
+12 para que serve o z-index?
+R: serve para dar hierarquia as camadas dos elementos da pagina
+
+13 para que serve overflow: auto?
+R: para deixa a caixa de texto automatica em relação ao tamanho onde ele se adapta de acordo com o que é digitado
+
+14 qual a diferença entre radio e checkbox?
+R: checkbox em um formulario aceita varias caixas marcadas e o radio so aceita uma unica opção
+
+15 para que serve a tag label
+R: serve para criar uma etiqueta ou uma legenda descritiva para um campo em um formulario
+
+16 para que serve uma tag semantica?
+R: para dar sentido e contexto ao conteudo da pagina, descrevendo todo o funcionamento e comunicação do conteudo
+
+17 quando usamos :hover?
+R: quando queremos que um botão tenha uma outra aparencia quando o mouse passar por cima
+
+18 para que serve alt em uma imagem?
+R: é a descrição textual do que é aquela imagem
+
+19 qual a diferenção de td e th?
+R: th é   a celula de cabeçalho e td é uma linha da coluna
+
+20 para que usamos CSS externo?
+R: pq é a forma mais facil e eficiente de estilização do html
