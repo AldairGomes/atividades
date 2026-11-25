@@ -1,0 +1,14 @@
+
+body {
+  text-align: center;
+  margin-top: 50px;
+}
+
+input,buton {
+  padding: 10px;
+  
+}
+#mensagem{
+    font-size: 20px
+}
+
